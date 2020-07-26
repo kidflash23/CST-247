@@ -1,0 +1,52 @@
+﻿@model List<Activity2Part1.Models.ButtonModel>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Button</title>
+</head>
+<body>
+    <div>
+        <! This is used as the testing the buttons.-->
+
+
+        @Html.Label("We welcome you to Razor", new { style = "font-family: Arial; font-size: 24px; width: 100%; text-align: center;" })
+        @Html.Label("Here is the given label of Playing With Buttons", new { style = "font-family: Arial; font-size: 24px; width: 100%; text-align: left;" })
+    </div>
+    <div>
+        @using (Html.BeginForm("OnButtonClick", "Button", FormMethod.Get))
+        {
+        <button type="submit" name="mine" value="1">
+            <! This is used as the testing the buttons with the first index.-->
+
+            @if (Model[0].State)
+            {
+                <img src="~/Images/button.jpg" />
+            }
+            else
+            {
+                <img src="~/Images/button_2.jpg" />
+            }
+
+        </button>
+        <button type="submit" name="mine" value="2">
+            <! This is used as the testing the buttons with the second index.-->
+
+            @if (Model[1].State)
+            {
+                <img src="~/Images/button.jpg" />
+            }
+            else
+            {
+                <img src="~/Images/button_2.jpg" />
+            }
+
+        </button>
+        }
+
+
+    </div>
+</body>
+</html>
